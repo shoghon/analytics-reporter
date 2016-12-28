@@ -27,3 +27,16 @@ applications:
   stack: cflinuxfs2
   timeout: 180
   path: .
+- name: analytics-reporter-test
+  instances: 1
+  memory: 512M
+  disk_quota: 1024M
+  no-route: true
+  buildpack: https://github.com/cloudfoundry/nodejs-buildpack
+  command: node deploy/test.js
+  services:
+  - analytics-s3
+  - analytics-env
+  stack: cflinuxfs2
+  timeout: 180
+  path: .
