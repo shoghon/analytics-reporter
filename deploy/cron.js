@@ -2,7 +2,7 @@ const exec = require("child_process").exec;
 
 var daily_run = function(){
 	console.log("about to run daily.sh");
-	exec("./daily.sh > ../logs/daily.log 2>&1", (error,stdout,stderr) => {
+	exec("./deploy/daily.sh > ../logs/daily.log 2>&1", (error,stdout,stderr) => {
 		if (error){
 			console.error(`exec error: ${error}`);
 			return;
@@ -16,7 +16,7 @@ var daily_run = function(){
 
 var hourly_run = function(){
 	console.log("about to run hourly.sh");
-	exec("./hourly.sh > ../logs/hourly.log 2>&1", (error,stdout,stderr) => {
+	exec("./deploy/hourly.sh > ../logs/hourly.log 2>&1", (error,stdout,stderr) => {
 		if (error){
 			console.error(`exec error: ${error}`);
 			return;
@@ -30,7 +30,7 @@ var hourly_run = function(){
 
 var realtime_run = function(){
 	console.log("realtime.sh is about to run");
-	exec("./realtime.sh > ../logs/realtime.log 2>&1", (error,stdout,stderr) => {
+	exec("./deploy/realtime.sh > ../logs/realtime.log 2>&1", (error,stdout,stderr) => {
 		if (error){
 			console.error(`exec error: ${error}`);
 			return;
