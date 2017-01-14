@@ -1,4 +1,5 @@
 const exec = require("child_process").exec;
+const execSync = require("child_process").execSync;
 
 var daily_run = function(){
 	console.log("about to run daily.sh");
@@ -8,7 +9,7 @@ var daily_run = function(){
 			return;
 		}
 		console.log("number of lines in daily.log:");
-		execSync("wc -l daily.log");
+		execSync("wc -l ../logs/daily.log");
 		console.log(`${stdout}`);
 		console.log(`stderr: ${stderr}`);
 	});
@@ -22,7 +23,7 @@ var hourly_run = function(){
 			return;
 		}
 		console.log("number of lines in hourly.log:");
-		execSync("wc -l hourly.log");
+		execSync("wc -l ../logs/hourly.log");
 		console.log(`${stdout}`);
 		console.log(`stderr: ${stderr}`);
 	});
@@ -36,7 +37,7 @@ var realtime_run = function(){
 			return;
 		}
 		console.log("number of lines in realtime.log:");
-		execSync("wc -l realtime.log");
+		execSync("wc -l ../logs/realtime.log");
 		console.log(`${stdout}`);
 		console.log(`stderr: ${stderr}`);
 	});
