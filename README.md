@@ -232,6 +232,12 @@ analytics --frequency=realtime
 analytics --publish --debug
 ```
 
+* `--agency` - provide an agency name to associate with the report
+
+```bash
+analytics --agency health-human-services
+```
+
 ### Deploying to GovCloud
 
 The analytics reporter runs on :cloud:.gov. Please refer to the `manifest.yml`
